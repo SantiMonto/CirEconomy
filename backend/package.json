@@ -1,0 +1,12 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Este es el backend para CirEconomy",
+  "main": "index.js",
+  "author": "Juan Vanegas, Santiago Montoya",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fastify": "^4.0.0"
+  }
+}
