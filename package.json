@@ -1,0 +1,13 @@
+{
+  "name": "cir-economy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/SantiMonto/CirEconomy",
+  "author": "Juan Vanegas, Santiago Montoya",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "commitizen": "^4.2.4",
+    "husky": "^8.0.1"
+  }
+}
