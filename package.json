@@ -9,5 +9,11 @@
   "dependencies": {
     "commitizen": "^4.2.4",
     "husky": "^8.0.1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0"
+  },
+  "scripts": {
+    "prepare": "husky install"
   }
 }
