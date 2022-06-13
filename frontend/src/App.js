@@ -1,16 +1,16 @@
 import './App.css';
 import Index from './pages/Index';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div>
       <Router>
-        <Switch>
+        <Routes>
           <Route path="/">
           <Index />
           </Route>
-        </Switch>
+        </Routes>
       </Router>
      
     </div>
