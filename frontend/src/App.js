@@ -5,6 +5,7 @@ import Cart from "./pages/Cart";
 import Layout from './layout/Layout';
 import Products from './pages/Products';
 import Categories from './pages/Categories';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
