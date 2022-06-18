@@ -5,9 +5,7 @@ import inicio from '../images/inicio.jpg'
 const Index = () => {
   return (
     <div>
-      <Container>
-        <img src={inicio} alt="Inicio" />
-      </Container>
+      <img src={inicio} className="d-block mx-auto" alt="Inicio" />
       <hr />
       <Container>
         <h2>Categorias</h2>

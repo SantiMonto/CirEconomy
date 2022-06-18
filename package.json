@@ -8,13 +8,11 @@
   "private": true,
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "commitizen": "^4.2.4"
   },
   "scripts": {
     "prepare": "husky install"
-  },
-  "dependencies": {
-    "commitizen": "^4.2.4"
   },
   "config": {
     "commitizen": {
