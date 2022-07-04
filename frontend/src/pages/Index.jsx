@@ -10,15 +10,13 @@ const Index = () => {
         <Card className="d-block mx-auto" style={{ width: '75rem' }} >
           <Card.Img img src={inicio} className="d-block mx-auto" alt="Inicio" />
           <Card.Body className='bg-dark'>
-            <Card.Text className='text-white text-justify'>
-              <h4>
+            <Card.Text as='h5'className='text-white'>
               CirEconomy es una pagina pensada para aportar al medio ambiente, esto mediante
               el uso de la economia circular, la cual para el caso particular busca que
               aquellas empresas luego de terminar un proyecto de construcción, remodelación, o
               en el cual tengan que utilizar materiales nuevos o maquinaria pesada, los pueda vender
               mediante una subasta al mejor postor, por lo que varias empresas o particulares pueden
               ver los productos que se están subastando y enviar una oferta por estos.
-              </h4>
             </Card.Text>
           </Card.Body>
         </Card>
