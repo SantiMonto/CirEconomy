@@ -5,7 +5,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap'
 const Layout = () => {
   return (
     <div>
-      <Navbar bg="light" variant="light" expand="lg" border="true">
+      <Navbar bg="dark" variant="dark" expand="lg" border="true">
         <Container size="xl">
           <Navbar.Brand href="/">
             <h1>
@@ -17,6 +17,7 @@ const Layout = () => {
             <Nav className="ms-auto" >
               <Nav.Link href="/">Inicio</Nav.Link>
               <Nav.Link href="/Categories">Categorias</Nav.Link>
+              <Nav.Link href="/Products">Productos</Nav.Link>
               <Nav.Link href="/Cart"><i class="fa-solid fa-cart-shopping"></i></Nav.Link>
             </Nav>
           </Navbar.Collapse>

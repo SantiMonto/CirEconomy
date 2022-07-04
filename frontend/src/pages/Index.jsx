@@ -1,14 +1,16 @@
 import React from 'react'
-import { Container, CardGroup, Card } from 'react-bootstrap';
+import { Container, CardGroup, Card, Nav } from 'react-bootstrap';
 import inicio from '../images/inicio.jpg'
 
 const Index = () => {
   return (
-    <div>
+    <div className='mt-4'>
       <img src={inicio} className="d-block mx-auto" alt="Inicio" />
       <hr />
       <Container>
-        <h2>Categorias</h2>
+        <a href="/categories" class="link-dark">
+          <h2>Categorias</h2>
+        </a>
         <CardGroup>
           <Card>
             <Card.Img variant="top" src="holder.js/100px160" />
