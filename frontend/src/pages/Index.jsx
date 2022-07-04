@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, CardGroup, Card, Nav } from 'react-bootstrap';
+import { Container, CardGroup, Card} from 'react-bootstrap';
 import inicio from '../images/inicio.jpg'
 
 const Index = () => {

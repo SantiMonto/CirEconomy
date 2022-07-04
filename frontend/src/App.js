@@ -5,6 +5,7 @@ import Cart from "./pages/Cart";
 import Layout from './layout/Layout';
 import Products from './pages/Products';
 import Categories from './pages/Categories';
+import Product from './pages/Product'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="cart" element={<Cart />}/>
             <Route path="products" element={<Products />}/>
             <Route path="categories" element={<Categories />}/>
+            <Route path="product" element={<Product />}/>
           </Route>
         </Routes>
       </Router>
