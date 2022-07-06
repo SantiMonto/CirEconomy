@@ -6,7 +6,6 @@ const Index = () => {
   return (
     <div>
       <section className="mt-4">
-        {/* <img src={inicio} className="d-block mx-auto" alt="Inicio" /> */}
         <Card className="d-block mx-auto" style={{ width: '75rem' }} >
           <Card.Img img src={inicio} className="d-block mx-auto" alt="Inicio" />
           <Card.Body className='bg-dark'>
