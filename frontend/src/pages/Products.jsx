@@ -1,13 +1,13 @@
 import React from 'react'
-import { Card, Row, Col, Container, Nav} from 'react-bootstrap';
+import { Card, Row, Col, Container} from 'react-bootstrap';
 import Producto from '../images/producto.png';
 import { Link } from 'react-router-dom';
 
 const Products = () => {
   return (
     <Container className='mt-5'>
-      <Row xs={1} md={3} className="g-4">
-        {Array.from({ length: 9 }).map((_, idx) => (
+      <Row xs={1} md={4} className="g-4">
+        {Array.from({ length: 8 }).map((_, idx) => (
           <Col>
             <Card>
               <Card.Img variant="top" src={Producto} />
