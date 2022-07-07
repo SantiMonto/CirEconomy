@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Container, Row, Col} from 'react-bootstrap';
+import { Card, Button, Container, Row, Col } from 'react-bootstrap';
 import Producto from '../images/producto.png'
 import { useNavigate } from 'react-router-dom';
 
@@ -9,9 +9,9 @@ const Product = () => {
 
     const navigate = useNavigate();
 
-const handleRegresar = () => {
-    navigate('/Products', {replace: true});
-}
+    const handleRegresar = () => {
+        navigate('/Products', { replace: true });
+    }
 
     return (
         <Container className='mt-4 d-flex mx-auto'>
@@ -53,7 +53,7 @@ const handleRegresar = () => {
                 </Row>
                 <Card.Footer className='text-end bg-white text-white'>
                     <Button className='mx-1' variant="dark">Ofertar</Button>
-                    <Button className='mx-1 border-dark' variant="light" onClick = {handleRegresar}>
+                    <Button className='mx-1 border-dark' variant="light" onClick={handleRegresar}>
                         Regresar
                     </Button>
                 </Card.Footer>
