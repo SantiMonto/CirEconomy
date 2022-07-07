@@ -2,4 +2,9 @@ const createService = () => {
   console.log('Estoy en el servicio de crear una categoría')
 }
 
-export { createService }
+const readAllService = () => {
+  console.log('Estoy en el servicio de leer todas las categorias')
+}
+
+
+export { createService, readAllService }
