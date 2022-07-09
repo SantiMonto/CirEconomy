@@ -6,24 +6,23 @@ import producto from '../images/producto.png'
 const Index = () => {
   return (
     <div>
-        <Card className="d-block mx-auto bg-light" >
-          <Card.Img img src={inicio} style={{ width: '45rem' }}  className="d-block mx-auto mt-2" alt="Inicio" />
-          <Card.Body className='bg-light d-block mx-auto' style={{ width: '75rem' }} >
+        <Card className="d-flex mx-auto" >
+          <Card.Img img src={inicio} className="d-block mx-auto mt-2 w-50" alt="Inicio" />
+          <Card.Body className='d-flex mx-auto w-75' >
             <Card.Text as='h5'className='text-black'>
-              CirEconomy es una pagina pensada para aportar al medio ambiente, esto mediante
-              el uso de la economia circular, la cual para el caso particular busca que
+              CirEconomy es una pagina pensada para aportar al medio ambiente, la cual busca que
               aquellas empresas luego de terminar un proyecto de construcción, remodelación, o
-              en el cual tengan que utilizar materiales nuevos o maquinaria pesada, los pueda vender
-              mediante una subasta al mejor postor, por lo que varias empresas o particulares pueden
-              ver los productos que se están subastando y enviar una oferta por estos.
+              en el cual utilicen materiales nuevos o maquinaria pesada, los pueda vender
+              mediante una subasta al mejor postor, en donde empresas o particulares pueden
+              ver los productos que subastados y enviar ofertas por estos.
             </Card.Text>
           </Card.Body>
         </Card>
-      <Container className="my-4">
+      <Container className="d-flex my-4">
         <a href="/categories" className="link-dark" >
           <h2>Categorias</h2>
         </a>
-        <Carousel className='my-4' variant="dark">
+        <Carousel className='d-flex my-4' variant="dark">
           <Carousel.Item>
             <img
               className="d-block w-50 mx-auto"
