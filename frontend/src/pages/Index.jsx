@@ -1,23 +1,28 @@
 import React from 'react'
-import { Container, Carousel, Card } from 'react-bootstrap';
+import { Container, Carousel, Card, Row, Col } from 'react-bootstrap';
 import inicio from '../images/inicio.jpg'
-import producto from '../images/producto.png'
 
 const Index = () => {
   return (
     <div>
-        <Card className="d-flex mx-auto" >
-          <Card.Img img src={inicio} className="d-block mx-auto mt-2 w-50" alt="Inicio" />
-          <Card.Body className='d-flex mx-auto w-75' >
-            <Card.Text as='h5'className='text-black'>
-              CirEconomy es una pagina pensada para aportar al medio ambiente, la cual busca que
-              aquellas empresas luego de terminar un proyecto de construcción, remodelación, o
-              en el cual utilicen materiales nuevos o maquinaria pesada, los pueda vender
-              mediante una subasta al mejor postor, en donde empresas o particulares pueden
-              ver los productos que subastados y enviar ofertas por estos.
-            </Card.Text>
-          </Card.Body>
-        </Card>
+      <Card className="d-flex mx-auto" align='middle' >
+        <Card.Body>
+          <Row className='my-2 mx-auto row-cols-auto'>
+            <Col className='d-flex mx-auto p-2 col-md-4 btn-group-vertical' align='justify'>
+              <Card.Text as='h5' className='text-black'>
+                CirEconomy es una pagina pensada para aportar al medio ambiente, la cual busca que
+                aquellas empresas luego de terminar un proyecto de construcción, remodelación, o
+                en el cual utilicen materiales nuevos o maquinaria pesada, los pueda vender
+                mediante una subasta al mejor postor, en donde empresas o particulares pueden
+                ver los productos que subastados y enviar ofertas por estos.
+              </Card.Text>
+            </Col>
+            <Col className='d-block mx-auto col-md-8'>
+              <Card.Img img src={inicio} className=" mx-auto mt-2 w-75" alt="Inicio" />
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
       <Container className="d-flex my-4">
         <a href="/categories" className="link-dark" >
           <h2>Categorias</h2>
