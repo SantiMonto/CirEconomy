@@ -1,15 +1,15 @@
 import React from 'react'
 import { Container, Carousel, Card } from 'react-bootstrap';
 import inicio from '../images/inicio.jpg'
+import producto from '../images/producto.png'
 
 const Index = () => {
   return (
     <div>
-      <section className="mt-4">
-        <Card className="d-block mx-auto" style={{ width: '75rem' }} >
-          <Card.Img img src={inicio} className="d-block mx-auto" alt="Inicio" />
-          <Card.Body className='bg-dark'>
-            <Card.Text as='h5'className='text-white'>
+        <Card className="d-block mx-auto bg-light" >
+          <Card.Img img src={inicio} style={{ width: '45rem' }}  className="d-block mx-auto mt-2" alt="Inicio" />
+          <Card.Body className='bg-light d-block mx-auto' style={{ width: '75rem' }} >
+            <Card.Text as='h5'className='text-black'>
               CirEconomy es una pagina pensada para aportar al medio ambiente, esto mediante
               el uso de la economia circular, la cual para el caso particular busca que
               aquellas empresas luego de terminar un proyecto de construcción, remodelación, o
@@ -19,17 +19,15 @@ const Index = () => {
             </Card.Text>
           </Card.Body>
         </Card>
-      </section>
-      <hr/>
-      <Container className="mt-4">
-        <a href="/categories" className="link-dark">
+      <Container className="my-4">
+        <a href="/categories" className="link-dark" >
           <h2>Categorias</h2>
         </a>
-        <Carousel className='mt-5' variant="dark">
+        <Carousel className='my-4' variant="dark">
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=First slide&bg=f5f5f5"
+              className="d-block w-50 mx-auto"
+              src={inicio}
               alt="First slide"
             />
             <Carousel.Caption>
@@ -39,8 +37,8 @@ const Index = () => {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=Second slide&bg=eee"
+              className="d-block w-50 mx-auto"
+              src={inicio}
               alt="Second slide"
             />
             <Carousel.Caption>
@@ -50,8 +48,8 @@ const Index = () => {
           </Carousel.Item>
           <Carousel.Item>
             <img
-              className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=e5e5e5"
+              className="d-block w-50 mx-auto"
+              src={inicio}
               alt="Third slide"
             />
             <Carousel.Caption>

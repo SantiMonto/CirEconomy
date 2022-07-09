@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Product = () => {
-
     const navigate = useNavigate();
 
     const handleRegresar = () => {
@@ -14,19 +13,19 @@ const Product = () => {
     }
 
     return (
-        <Container className='mt-4 d-flex mx-auto'>
+        <Container className='my-2 d-flex'>
             <Card>
                 <Card.Header className='bg-dark text-white' as="h4">Nombre del producto</Card.Header>
-                <Row className='my-2 mx-2'>
-                    <Col xs={3} className='mx-2'>
-                        <Card.Img style={{ width: '15rem' }} variant="top" src={Producto} />
+                <Row className='d-flex my-2 mx-auto'>
+                    <Col className='d-grid col-md-4 justify-content-center'>
+                        <Card.Img style={{ width: '16rem' }} variant="top" src={Producto} />
                     </Col>
-                    <Col xs={1}>
-                        <Card.Img className='my-1' style={{ width: '4.5rem' }} variant="top" src={Producto} />
-                        <Card.Img className='my-1' style={{ width: '4.55rem' }} variant="top" src={Producto} />
-                        <Card.Img className='my-1' style={{ width: '4.55rem' }} variant="top" src={Producto} />
+                    <Col className='d-grid d-inline col-md-1 justify-content-center'>
+                        <Card.Img className='my-1' style={{ width: '5rem' }} src={Producto} />
+                        <Card.Img className='my-1' style={{ width: '5rem' }} src={Producto} />
+                        <Card.Img className='my-1' style={{ width: '5rem' }} src={Producto} />
                     </Col>
-                    <Col xs={6}>
+                    <Col className='d-flex col-md-7 justify-content-center'>
                         <Card.Body>
                             <Card.Text>
                                 <p>
