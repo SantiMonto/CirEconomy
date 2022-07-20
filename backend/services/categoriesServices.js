@@ -1,3 +1,5 @@
+import { DbInstance } from '../data/GSConnection.js'
+
 const createService = () => {
   console.log('Estoy en el servicio de crear una categoría')
 }
@@ -13,6 +15,5 @@ const updateOneService = () => {
 const deleteService = () => {
   console.log('Estoy en el servicio de eliminar una categoria')
 }
-
 
 export { createService, readAllService, updateOneService, deleteService }
