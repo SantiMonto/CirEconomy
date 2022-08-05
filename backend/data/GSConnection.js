@@ -7,6 +7,7 @@ class Db {
 
   constructor () {
     this.document = new GoogleSpreadsheet('1TASQsKSjhgkNS55i-4SP3ZqPDyUhYhkWSbYBaCXWfXM');
+    this.document.loadInfo();
   }
 
   async connect () {
