@@ -27,15 +27,15 @@ const updateOneService = async() => {
   console.log('Estoy en el servicio de actualizar una categoria')
   const sheet = DbInstance.document.sheetsByTitle['Categorias'];
   const rows = await sheet.getRows();
-  rows[0].name = 'Arenas';
-  await rows[0].save();
+  rows[3].name = 'Arenas';
+  await rows[3].save();
 }
 
 const deleteService = async() => {
   console.log('Estoy en el servicio de eliminar una categoria')
   const sheet = DbInstance.document.sheetsByTitle['Categorias'];
   const row = await sheet.getRows();
-  await row[1].delete();
+  await row[4].delete();
 
 }
 

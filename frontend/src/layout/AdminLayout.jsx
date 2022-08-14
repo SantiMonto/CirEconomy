@@ -8,10 +8,10 @@ const AdminLayout = () => {
             <Container>
                 <Nav fill variant="tabs" defaultActiveKey="/AdminLayout">
                     <Nav.Item>
-                        <Nav.Link href="/adminLayout/adminCategories">Categorias</Nav.Link>
+                        <Nav.Link className="link-dark" href="/adminLayout/adminCategories">Categorias</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href="/adminLayout/adminProducts">Productos</Nav.Link>
+                        <Nav.Link className="link-dark" href="/adminLayout/adminProducts">Productos</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Container>
