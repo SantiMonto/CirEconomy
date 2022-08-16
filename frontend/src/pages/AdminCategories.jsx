@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Accordion, Container, Table, Form, Button } from 'react-bootstrap'
+import { Accordion, Container, Table, Form, Button, ButtonGroup } from 'react-bootstrap'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,6 +10,10 @@ const AdminCategories = () => {
     const createCategorie = async () => {
         console.log("nombre", nameCategorie, "imagen", imgCategorie);
         toast.success('Categoria creada con exito');
+    }
+
+    const getCategories = async () => {
+        console.log('ver categorias');
     }
 
     const editCategorie = async () => {
@@ -47,19 +51,19 @@ const AdminCategories = () => {
                                         }}
                                     />
                                 </Form.Group>
-                                <Button
-                                    variant="dark"
-                                    type="button"
-                                    onClick={() => {
-                                        createCategorie();
-                                    }}
-                                >
-                                    Agregar
-                                </Button>
-                                <ToastContainer
-                                    position="top-center"
-                                    autoClose={5000}
-                                />
+                                    <Button
+                                        variant="dark"
+                                        type="button"
+                                        onClick={() => {
+                                            createCategorie();
+                                        }}
+                                    >
+                                        Agregar Categoria
+                                    </Button>
+                                    <ToastContainer
+                                        position="top-center"
+                                        autoClose={5000}
+                                    />
                             </Form>
                         </Accordion.Body>
                     </Accordion.Item>
