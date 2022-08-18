@@ -1,15 +1,36 @@
 import React, { useState, useEffect } from 'react'
-import { Accordion, Container, Table, Form, Button, ButtonGroup } from 'react-bootstrap'
+import { Accordion, Container, Table, Form, Button} from 'react-bootstrap'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AdminCategories = () => {
+
+    const categoriesBackend = [
+        {
+            item: 1,
+            nombre: 'Residuos de arena',
+            urlImagen: 'www.imagenesweb.con/residuos'
+        },
+        {
+            item: 2,
+            nombre: 'Repuestos de maquinaria',
+            urlImagen: 'www.imagenesweb.con/repuestos'
+        },
+        {
+            item: 3,
+            nombre: 'Acero',
+            urlImagen: 'www.imagenesweb.con/acero'
+        },
+    ];
+
     const [nameCategorie, setNameCategorie] = useState([]);
     const [imgCategorie, setImgCategorie] = useState([]);
+    const [categories, setCategories] = useState([]);
 
-    const createCategorie = async () => {
+    const createCategorie = () => {
         console.log("nombre", nameCategorie, "imagen", imgCategorie);
         toast.success('Categoria creada con exito');
+        setCategories([...categories,{item:categories.length,nombre:nameCategorie,urlImagen:imgCategorie}])
     }
 
     const getCategories = async () => {
@@ -19,6 +40,11 @@ const AdminCategories = () => {
     const editCategorie = async () => {
         console.log('Edita la categoria seleccionada');
     }
+
+    useEffect(() => {
+        //obtener categorias desde el backend
+        setCategories(categoriesBackend);
+    }, []);
 
     return (
         <div>
@@ -51,19 +77,19 @@ const AdminCategories = () => {
                                         }}
                                     />
                                 </Form.Group>
-                                    <Button
-                                        variant="dark"
-                                        type="button"
-                                        onClick={() => {
-                                            createCategorie();
-                                        }}
-                                    >
-                                        Agregar Categoria
-                                    </Button>
-                                    <ToastContainer
-                                        position="top-center"
-                                        autoClose={5000}
-                                    />
+                                <Button
+                                    variant="dark"
+                                    type="button"
+                                    onClick={() => {
+                                        createCategorie();
+                                    }}
+                                >
+                                    Agregar Categoria
+                                </Button>
+                                <ToastContainer
+                                    position="bottom-right"
+                                    autoClose={5000}
+                                />
                             </Form>
                         </Accordion.Body>
                     </Accordion.Item>
@@ -80,32 +106,25 @@ const AdminCategories = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Residuos de arena</td>
-                                        <td>www.imagenesweb.con/residuos</td>
-                                        <td>
-                                            <Button
-                                                type="button"
-                                                onClick={() => {
-                                                    editCategorie();
-                                                }}
-                                            >
-                                                <i className="fa-solid fa-pen-to-square"></i>
-                                            </Button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td colSpan={2}>Larry the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+                                    {categories.map((category) => {
+                                        return (
+                                            <tr>
+                                                <td>{category.item}</td>
+                                                <td>{category.nombre}</td>
+                                                <td>{category.urlImagen}</td>
+                                                <td>
+                                                    <Button
+                                                        type="button"
+                                                        onClick={() => {
+                                                            editCategorie();
+                                                        }}
+                                                    >
+                                                        <i className="fa-solid fa-pen-to-square"></i>
+                                                    </Button>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
                             </Table>
                         </Accordion.Body>
