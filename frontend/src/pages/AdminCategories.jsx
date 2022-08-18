@@ -30,7 +30,7 @@ const AdminCategories = () => {
     const createCategorie = () => {
         console.log("nombre", nameCategorie, "imagen", imgCategorie);
         toast.success('Categoria creada con exito');
-        setCategories([...categories,{item:categories.length,nombre:nameCategorie,urlImagen:imgCategorie}])
+        setCategories([...categories,{item:categories.length +1,nombre:nameCategorie,urlImagen:imgCategorie}])
     }
 
     const getCategories = async () => {
