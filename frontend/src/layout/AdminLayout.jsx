@@ -5,13 +5,13 @@ import { Outlet } from 'react-router-dom';
 const AdminLayout = () => {
     return (
         <div>
-            <Container>
-                <Nav fill variant="tabs" defaultActiveKey="/AdminLayout">
+            <Container className="mt-2">
+                <Nav fill variant="tabs">
                     <Nav.Item>
-                        <Nav.Link className="link-dark" href="/adminLayout/adminCategories">Categorias</Nav.Link>
+                        <Nav.Link className="link-dark border border-dark" href="/adminLayout/adminCategories">Categorias</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className="link-dark" href="/adminLayout/adminProducts">Productos</Nav.Link>
+                        <Nav.Link className="link-dark border border-dark" href="/adminLayout/adminProducts">Productos</Nav.Link>
                     </Nav.Item>
                 </Nav>
             </Container>
