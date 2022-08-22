@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Accordion, Container, Table, Form, Button} from 'react-bootstrap'
+import { Accordion, Container, Table, Form, Button } from 'react-bootstrap'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,15 +30,15 @@ const AdminCategories = () => {
     const createCategorie = () => {
         console.log("nombre", nameCategorie, "imagen", imgCategorie);
         toast.success('Categoria creada con exito');
-        setCategories([...categories,{item:categories.length +1,nombre:nameCategorie,urlImagen:imgCategorie}])
-    }
-
-    const getCategories = async () => {
-        console.log('ver categorias');
+        setCategories([...categories, { item: categories.length + 1, nombre: nameCategorie, urlImagen: imgCategorie }])
     }
 
     const editCategorie = async () => {
         console.log('Edita la categoria seleccionada');
+    }
+
+    const deleteCategorie = async () => {
+        console.log('Elimina la categoria seleccionada');
     }
 
     useEffect(() => {
@@ -112,8 +112,9 @@ const AdminCategories = () => {
                                                 <td>{category.item}</td>
                                                 <td>{category.nombre}</td>
                                                 <td>{category.urlImagen}</td>
-                                                <td>
+                                                <td className="text-center">
                                                     <Button
+                                                        className="bg-dark border-dark"
                                                         type="button"
                                                         onClick={() => {
                                                             editCategorie();
@@ -132,7 +133,38 @@ const AdminCategories = () => {
                     <Accordion.Item eventKey="2">
                         <Accordion.Header>Eliminar categoria</Accordion.Header>
                         <Accordion.Body>
-                            Info para eliminar categoria
+                            <Table striped bordered hover>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>URL de la imagen</th>
+                                        <th>Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {categories.map((category) => {
+                                        return (
+                                            <tr>
+                                                <td>{category.item}</td>
+                                                <td>{category.nombre}</td>
+                                                <td>{category.urlImagen}</td>
+                                                <td className="text-center">
+                                                    <Button
+                                                        className="bg-danger border-danger"
+                                                        type="button"
+                                                        onClick={() => {
+                                                            deleteCategorie();
+                                                        }}
+                                                    >
+                                                        <i className="fa-solid fa-trash-can"></i>
+                                                    </Button>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
+                                </tbody>
+                            </Table>
                         </Accordion.Body>
                     </Accordion.Item>
                 </Accordion>

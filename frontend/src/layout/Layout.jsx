@@ -15,7 +15,7 @@ const Layout = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto" >
-              <Nav.Link href="/adminLayout/adminCategories">Admin</Nav.Link>
+              <Nav.Link href="/adminLayout">Admin</Nav.Link>
               <Nav.Link href="/">Inicio</Nav.Link>
               <Nav.Link href="/Categories">Categorias</Nav.Link>
               <Nav.Link href="/Products">Productos</Nav.Link>
