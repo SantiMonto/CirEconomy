@@ -3,27 +3,31 @@ import { DbInstance } from '../data/GSConnection.js'
 //DbInstance.document.updateProperties({ title: 'cir-economy' });
 //const sheet = DbInstance.document.addSheet({title: 'Categorias', headerValues: ['Id','name', 'image'] });
 
-const createService = async () => {
+const createService = async (id,name,image) => {
   console.log('Estoy en el servicio de crear una categoría')
   //DbInstance.document.loadInfo();
   const sheet = DbInstance.document.sheetsByTitle['Categorias'];
-  const rows = await  sheet.getRows();
-  const row = await  sheet.addRow({
-    Id:rows.length + 1,
-    name: 'Maquinaria',
-    image: 'image.png'//aqui va a ir una URL
+  const rows = await sheet.getRows();
+  const row = await sheet.addRow({
+    Id: id,
+    name: name,
+    image: image,
   });
+  return row;
 }
 
 const readAllService = async () => {
   console.log('Estoy en el servicio de leer todas las categorias')
   const sheet = DbInstance.document.sheetsByTitle['Categorias'];
+  const array = [];
   const rows = await sheet.getRows();
-  console.log(rows.length)
-  //Aqui hay algo de sincronización creeria yo, pero no he podido solucionar
+  rows.map((row) => {
+    array.push({id:row.Id,name:row.name,image:row.image});
+  })
+  return array;
 }
 
-const updateOneService = async() => {
+const updateOneService = async () => {
   console.log('Estoy en el servicio de actualizar una categoria')
   const sheet = DbInstance.document.sheetsByTitle['Categorias'];
   const rows = await sheet.getRows();
@@ -31,7 +35,7 @@ const updateOneService = async() => {
   await rows[3].save();
 }
 
-const deleteService = async() => {
+const deleteService = async () => {
   console.log('Estoy en el servicio de eliminar una categoria')
   const sheet = DbInstance.document.sheetsByTitle['Categorias'];
   const row = await sheet.getRows();

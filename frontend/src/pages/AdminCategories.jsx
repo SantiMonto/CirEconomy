@@ -5,32 +5,35 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AdminCategories = () => {
 
-    const categoriesBackend = [
-        {
-            item: 1,
-            nombre: 'Residuos de arena',
-            urlImagen: 'www.imagenesweb.con/residuos'
-        },
-        {
-            item: 2,
-            nombre: 'Repuestos de maquinaria',
-            urlImagen: 'www.imagenesweb.con/repuestos'
-        },
-        {
-            item: 3,
-            nombre: 'Acero',
-            urlImagen: 'www.imagenesweb.con/acero'
-        },
-    ];
-
     const [nameCategorie, setNameCategorie] = useState([]);
     const [imgCategorie, setImgCategorie] = useState([]);
+
     const [categories, setCategories] = useState([]);
 
-    const createCategorie = () => {
-        console.log("nombre", nameCategorie, "imagen", imgCategorie);
-        toast.success('Categoria creada con exito');
-        setCategories([...categories, { item: categories.length + 1, nombre: nameCategorie, urlImagen: imgCategorie }])
+    const infoToSend = {
+        id: categories.length+1,
+        name:nameCategorie,
+        image:imgCategorie
+    }
+    console.log(infoToSend)
+
+    const url = 'http://127.0.0.1:5000/categories';
+
+    const getCategories = async() => {
+        const response = await fetch(url);
+        const res = await response.json();
+        return res;
+    }
+
+    const createCategorie = async (url,info) => {
+        const response = await fetch(url, {
+             method: 'POST',
+             body: JSON.stringify(info),
+             headers: {'Content-Type': 'application/json'},
+         });
+         const res = await response.json();
+         console.log(res)
+        return res; 
     }
 
     const editCategorie = async () => {
@@ -43,7 +46,7 @@ const AdminCategories = () => {
 
     useEffect(() => {
         //obtener categorias desde el backend
-        setCategories(categoriesBackend);
+        getCategories().then((res)=>setCategories([...categories,...res.data]));
     }, []);
 
     return (
@@ -81,7 +84,7 @@ const AdminCategories = () => {
                                     variant="dark"
                                     type="button"
                                     onClick={() => {
-                                        createCategorie();
+                                        createCategorie(url,infoToSend);
                                     }}
                                 >
                                     Agregar Categoria
@@ -109,12 +112,12 @@ const AdminCategories = () => {
                                     {categories.map((category) => {
                                         return (
                                             <tr>
-                                                <td>{category.item}</td>
-                                                <td>{category.nombre}</td>
-                                                <td>{category.urlImagen}</td>
+                                                <td>{category.id}</td>
+                                                <td>{category.name}</td>
+                                                <td>{category.image}</td>
                                                 <td className="text-center">
                                                     <Button
-                                                        className="bg-dark border-dark"
+                                                        className="bg-warning border-warning"
                                                         type="button"
                                                         onClick={() => {
                                                             editCategorie();
@@ -146,9 +149,9 @@ const AdminCategories = () => {
                                     {categories.map((category) => {
                                         return (
                                             <tr>
-                                                <td>{category.item}</td>
-                                                <td>{category.nombre}</td>
-                                                <td>{category.urlImagen}</td>
+                                                <td>{category.id}</td>
+                                                <td>{category.name}</td>
+                                                <td>{category.image}</td>
                                                 <td className="text-center">
                                                     <Button
                                                         className="bg-danger border-danger"

@@ -1,10 +1,14 @@
 import FastifyClass from "fastify"
 import routes from "./endpoints/index.js"
 import { DbInstance } from "./data/GSConnection.js"
+import cors from '@fastify/cors'
+
 
 const fastify = FastifyClass({
     logger: true
 })
+
+fastify.register(cors);
 
 fastify.get('/api', function (request, reply) {
     reply.send({ status: 'OK' })
